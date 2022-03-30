@@ -293,7 +293,7 @@ int main(int argc , char **argv)
 
     printf("\n[] Extracting IV Offset pointer ....");
     IV_PTR = ( unsigned int *)  (fileData + Index + sizeof(pattern));
-    DumpMemory(IV_PTR, 4);
+    DumpMemory((unsigned char*)IV_PTR, 4);
 
     memcpy(IV, fileData  + ( *IV_PTR - MZ_BASE), KeyLen);
 
